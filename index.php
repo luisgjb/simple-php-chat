@@ -16,8 +16,8 @@
                 <p class="message">¿Ya te encuentras registrado? <a href="#">Entrar</a></p>
             </form>
             <form class="login-form" method="post" action="conectarse.php">
-                <input type="text" placeholder="usuario"/>
-                <input type="password" placeholder="password"/>
+                <input name="usuario"  type="text" placeholder="usuario"/>
+                <input name="password" type="password" placeholder="password"/>
                 <button>Conectarse</button>
 
                 <?php
