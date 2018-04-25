@@ -5,7 +5,7 @@ class ConexionDb {
 
     public static function getConexion(){
         if(self::$DBCONNECTION== null ){
-            self::$DBCONNECTION = mysqli_connect('127.0.0.1', 'root', 'ib123456', 'phpchat');
+            self::$DBCONNECTION = mysqli_connect('127.0.0.1', 'root', '', 'phpchat');
             if (!self::$DBCONNECTION) {
                 echo "Error: Imposible conectarse a MySQL." . PHP_EOL;
                 echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;

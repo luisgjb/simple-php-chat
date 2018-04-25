@@ -12,6 +12,7 @@ if( isset($_POST['usuario']) && isset($_POST['password'])  && isset($_POST['pass
     if($password2 !== $password){
         if(!isset($_SESSION['errors'])) $_SESSION['errors'] = [];
         array_push($_SESSION['errors'], 'Las contraseñas no coinciden');
+        header('Location:index.php');
         return;
     }
 
@@ -23,5 +24,3 @@ if( isset($_POST['usuario']) && isset($_POST['password'])  && isset($_POST['pass
     array_push($_SESSION['errors'], 'Información invalida');
 }
 header('Location:index.php');
-/*$msg = "Las contraseñas no coinciden.";
-        header("Location:http://localhost/login.php?msg=$msg");*/
