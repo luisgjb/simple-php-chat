@@ -14,9 +14,10 @@ if( isset($_POST['usuario']) && isset($_POST['password']) ) {
             if(!isset($_SESSION['errors'])) $_SESSION['errors'] = [];
             array_push($_SESSION['errors'], 'Usuario o contraseña invalidos.');
         }else{
-            $_SESSION['idusuario'] = $usuario;
-            $_SESSION['usuario'] = $data['idusuario'];
+            $_SESSION['idusuario'] = $data['idusuario'];
+            $_SESSION['usuario'] = $usuario;
             header('Location:chat.php');
+            return;
         }
     }else{
         if(!isset($_SESSION['errors'])) $_SESSION['errors'] = [];

@@ -1,5 +1,8 @@
 <?php
     require 'vendor/conexionDb.php';
+    session_start();
+    $_SESSION['idmensaje'] = 1;
+    if(!isset($_SESSION['idusuario'])) header('Location:index.php')
 ?>
 
 <!DOCTYPE html>
@@ -12,10 +15,12 @@
     <link rel="stylesheet" href="chat.css">
 </head>
 <body>
+<form action="desconectarse.php" method="post">
+    <button type="submit" class="btn btn-danger">Desconectarse</button></form>
     <div class="container">
         <div class="row">
             <div class="message-wrap col-lg-12">
-                <div class="msg-wrap">
+                <div class="msg-wrap"  id="chats">
 
 
                     <div class="media msg ">
@@ -32,14 +37,14 @@
                     </div>
                 </div>
 
-                <div class="send-wrap ">
+                <div class="send-wrap">
 
-                    <textarea class="form-control send-message" rows="3" placeholder="Write a reply..."></textarea>
+                    <textarea class="form-control send-message" id="mensaje" rows="3" placeholder="Write a reply..."></textarea>
 
 
                 </div>
                 <div class="btn-panel">
-                    <a href="" class=" col-lg-12 text-right btn send-message-btn" role="button"><i class="fa fa-plane"></i> Enviar mensaje</a>
+                    <a href="" id="btnEnviar" class=" col-lg-12 text-right btn send-message-btn" role="button"><i class="fa fa-plane"></i> Enviar mensaje</a>
                 </div>
             </div>
         </div>
